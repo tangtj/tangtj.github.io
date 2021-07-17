@@ -1,0 +1,11 @@
+markdown: redcarpet
+permalink: /:year/:month-:day-:title.html
+destination: _site
+name: TANG    #将会显示在左上角
+myname: TANG  #你的名字，显示在页脚和文章开始
+email: tangjietj@foxmail.com #邮箱 
+github: tangtj   #github账号，用于构建github链接
+paginate: 20   #每页文章个数
+paginate_path: "/blog/page:num/" #此项不可更改
+myurl: http://tangtj.com #此url指向你的首页
+baseurl: "" #如果是项目pages，填写为"/<项目名>"

@@ -9,17 +9,4 @@ comments: no
 
 ----
 
-### 联系方式：
-
-{% if site.qq %}
-ＱＱ：[{{ site.qq }}](tencent://message/?uin={{ site.qq }})
-{% endif %}  
-百度：[veekxt](http://www.baidu.com/p/veekxt)
-
-此网站：<{{ site.myurl }}>
-
-邮箱：[{{ site.email }}](mailto:{{ site.email }})
-
-GitHub : [http://github.com/{{ site.github }}](http://github.com/{{ site.github }})
-
 

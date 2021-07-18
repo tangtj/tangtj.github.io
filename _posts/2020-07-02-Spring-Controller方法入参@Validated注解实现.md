@@ -116,7 +116,7 @@ Content-Type: application/json
 
 ### 扩展
 
-在这里我想到一个问题，Controller自定义方法参数转换 也是实现的`HandlerMethodArgumentResolver`接口，查看之前的博文 ：[Spring MVC Controller自定义方法参数]({{ site.baseurl }}{% link _posts/2020-06-29-Spring-MVC-Controller自定义参数和返回值解析 %})
+在这里我想到一个问题，Controller自定义方法参数转换 也是实现的`HandlerMethodArgumentResolver`接口，查看之前的博文 ：[Spring MVC Controller自定义方法参数](2020-06-29-Spring-MVC-Controller自定义参数和返回值解析.md)
 
 发现：**如果不加入@Validated校验的相关代码，那么自定义方法参数解析无法使用@Validated进行数据校验**，因为每种类型对应了一个`HandlerMethodArgumentResolver`实现，@Validated校验只对带有@RequestBody有用。
 

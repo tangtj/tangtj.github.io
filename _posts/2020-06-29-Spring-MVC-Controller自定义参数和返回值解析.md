@@ -5,6 +5,7 @@ category: 工作
 tags: 
   - spring
   - java
+typora-root-url: ..
 ---
 
 本文代码示例 ：[Github](https://github.com/tangtj1/BlogExamlpe/tree/master/src/main/java/cn/tangtj/blogexample/demo2)
@@ -34,19 +35,19 @@ tags:
 
 在`InvocableHandlerMethod#getMethodArgumentValues`
 
-![cead3e00a0a8fa975044f37808eb4c0](..\file\image\cead3e00a0a8fa975044f37808eb4c0.png)
+![cead3e00a0a8fa975044f37808eb4c0](/file/image/cead3e00a0a8fa975044f37808eb4c0.png)
 
 可以看到，获取Controller方法入参的信息，并挨个判断是否支持解析。不支持的直接会抛出异常，支持的则会接着进行下去对参数进行处理。
 
 查看一下这个类`HandlerMethodArgumentResolverComposite`他集成了`HandlerMethodArgumentResolver`接口，使用了代理模式，内部存有20来个`HandlerMethodArgumentResolver`实现类，由它统一对外进行判断内部调用对应的实现接口。
 
-![TIM截图20200629171105](..\file\image\TIM截图20200629171105.png)
+![TIM截图20200629171105](/file/image/TIM截图20200629171105.png)
 
-![TIM截图20200629171127](..\file\image\TIM截图20200629171127.png)
+![TIM截图20200629171127](/file/image/TIM截图20200629171127.png)
 
 `HandlerMethodArgumentResolver`接口
 
-![微信图片_20200629171755](..\file\image\微信图片_20200629171755.png)
+![微信图片_20200629171755](/file/image/微信图片_20200629171755.png)
 
 接口中有两个方法。一个判断是否支持该参数，另一个就是参数对应的对象。
 
@@ -137,7 +138,7 @@ public class ReqIPController {
 
 运行结果图：
 
-![TIM截图20200629183201](..\file\image\TIM截图20200629183201.png)
+![TIM截图20200629183201](/file/image/TIM截图20200629183201.png)
 
 
 

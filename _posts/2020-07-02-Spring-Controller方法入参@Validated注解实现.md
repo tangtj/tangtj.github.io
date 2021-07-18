@@ -5,6 +5,7 @@ category: 工作
 tags: 
   - spring
   - java
+typora-root-url: ..
 ---
 
 **本文代码示例：[GITHUB](https://github.com/tangtj1/BlogExamlpe/tree/master/src/main/java/cn/tangtj/blogexample/demo3)**
@@ -87,13 +88,13 @@ Content-Type: application/json
 
 进入日志中所说的`DefaultHandlerExceptionResolver`类，在`doResolveException`方法上打上了断点。再次行了一次http请求，捕捉到了异常，查看异常的栈信息。
 
-![20200701-validated-01](..\file\image\20200701-validated-01.png)
+![20200701-validated-01](/file/image/20200701-validated-01.png)
 
 从图中我们可以看出 抛出的异常名为`MethodArgumentNotValidException`，并定位到了是从`RequestResponseBodyMethodProcessor#resolveArgument`方法中抛出来的。
 
 定位到源码如下：
 
-![20200701-validated-02](..\file\image\20200701-validated-02.png)
+![20200701-validated-02](/file/image/20200701-validated-02.png)
 
 可以看出先是在第一个红箭头处，进行了数据验证，然后判断是否有数据校验错误，如有则抛出
 
@@ -103,7 +104,7 @@ Content-Type: application/json
 
 查看这个类的UML结构图
 
-![20200701-validated-03](..\file\image\20200701-validated-03.png)
+![20200701-validated-03](/file/image/20200701-validated-03.png)
 
 `RequestResponseBodyMethodProcessor` 继承了`AbstractMessageConverterMethodProcessor`并最终实现`HandlerMethodArgumentResolver`接口的`resolveArgument` 方法，并支持验证所有被`@RequestBody`标注的参数。
 
@@ -115,7 +116,7 @@ Content-Type: application/json
 
 ### 扩展
 
-在这里我想到一个问题，Controller自定义方法参数转换 也是实现的`HandlerMethodArgumentResolver`接口，查看之前的博文 ：[Spring MVC Controller自定义方法参数](https://tangtj.cn/index.php/archives/38/)
+在这里我想到一个问题，Controller自定义方法参数转换 也是实现的`HandlerMethodArgumentResolver`接口，查看之前的博文 ：[Spring MVC Controller自定义方法参数]({{ site.baseurl }}{% link _posts/2020-06-29-Spring-MVC-Controller自定义参数和返回值解析 %})
 
 发现：**如果不加入@Validated校验的相关代码，那么自定义方法参数解析无法使用@Validated进行数据校验**，因为每种类型对应了一个`HandlerMethodArgumentResolver`实现，@Validated校验只对带有@RequestBody有用。
 

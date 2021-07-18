@@ -1,7 +1,7 @@
 ---
 layout: post
-title: "第一篇博客"
-categories: 扯淡
+title: "Spring Controller方法入参@Validated注解实现"
+category: 工作
 tags: 
   - spring
   - java

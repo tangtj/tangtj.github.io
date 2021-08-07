@@ -24,6 +24,23 @@ jobs:
           ls ${{ github.workspace }}/_site
       - uses: actions/setup-python@v2.2.2
       - name: Upload site
+        env:
+          cos_secret_id : ${{secret.COS_SECRET_ID}}
+          cos_secret_key: ${{secret.COS_SECRET_KEY}}
+          cos_bucket: ${{secret.COS_BUCKET}}
         run: |
           ls
           pip install coscmd
+          echo "[common]
+                secret_id = ${{cos_secret_id}}
+                secret_key = ${{cos_secret_key}}
+                bucket = ${{cos_bucket}}
+                region = ap-chongqing
+                max_thread = 5
+                part_size = 1
+                retry = 5
+                timeout = 60
+                schema = https
+                verify = md5
+                anonymous = False" >> .cos.conf
+          coscmd list /

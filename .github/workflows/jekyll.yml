@@ -39,4 +39,4 @@ jobs:
                 schema = https
                 verify = md5
                 anonymous = False" >> cos.conf
-          coscmd -c ./cos.conf upload -rs --delete ./ / --ignore .github/*
+          echo y | coscmd -c ./cos.conf upload -rs --delete ./ / --ignore .github/**,.git/**

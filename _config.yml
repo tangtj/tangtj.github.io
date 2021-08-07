@@ -8,7 +8,4 @@ paginate_path: "/blog/page:num/" #此项不可更改
 myurl: http://tangtj.com #此url指向你的首页
 permalink: /:year/:month-:day-:title.html
 
-plugins:
-  - jekyll-relative-links
-
 baseurl: "" #如果是项目pages，填写为"/<项目名>"

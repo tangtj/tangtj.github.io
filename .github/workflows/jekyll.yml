@@ -38,5 +38,5 @@ jobs:
                 timeout = 60
                 schema = https
                 verify = md5
-                anonymous = False" >> .cos.conf
+                anonymous = False" >> ./.cos.conf
           coscmd list /

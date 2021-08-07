@@ -1,0 +1,39 @@
+name: Jekyll site build
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Build the site in the jekyll/builder container
+        run: |
+          docker run \
+          -v ${{ github.workspace }}:/srv/jekyll -v ${{ github.workspace }}/_site:/srv/jekyll/_site \
+          jekyll/builder:latest /bin/bash -c "chmod -R 777 /srv/jekyll && gem install jekyll-relative-links && jekyll build --future"
+          ls ${{ github.workspace }}/_site
+      - uses: actions/setup-python@v2.2.2
+      - name: Upload site
+        run: |
+          ls
+          pip install coscmd
+          echo "[common]
+                secret_id = ${{secrets.COS_SECRET_ID}}
+                secret_key = ${{secrets.COS_SECRET_KEY}}
+                bucket = ${{secrets.COS_BUCKET}}
+                region = ap-chongqing
+                max_thread = 5
+                part_size = 1
+                retry = 5
+                timeout = 60
+                schema = https
+                verify = md5
+                anonymous = False" >> cos.conf
+          echo y | coscmd -c ./cos.conf upload -rs --delete ${{ github.workspace }}/_site/ /

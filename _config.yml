@@ -6,7 +6,7 @@ github: tangtj   #github账号，用于构建github链接
 paginate: 20   #每页文章个数
 paginate_path: "/blog/page:num/" #此项不可更改
 myurl: http://tangtj.com #此url指向你的首页
-permalink: /:year/:month-:day-:title.html
+permalink: /post/:year/:month-:day-:title.html
 
 plugins:
   - jekyll-relative-links

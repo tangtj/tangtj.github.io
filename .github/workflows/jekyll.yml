@@ -3,7 +3,6 @@ name: Jekyll site build
 on:
   push:
     branches:
-      - feat-action
       - main
   pull_request:
     branches:

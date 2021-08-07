@@ -22,8 +22,8 @@ jobs:
           -v ${{ github.workspace }}:/srv/jekyll -v ${{ github.workspace }}/_site:/srv/jekyll/_site \
           jekyll/builder:latest /bin/bash -c "chmod -R 777 /srv/jekyll && gem install jekyll-relative-links && jekyll build --future"
           ls ${{ github.workspace }}/_site
-      - uses: actions/setup-python@v2.2.2
       - name: Upload site
+        uses: actions/setup-python@v2.2.2
         with:
           cos_secret_id: ${{secrets.COS_SECRET_ID}}
           cos_secret_key: ${{secrets.COS_SECRET_KEY}}

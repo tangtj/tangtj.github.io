@@ -25,9 +25,9 @@ jobs:
       - uses: actions/setup-python@v2.2.2
       - name: Upload site
         env:
-          cos_secret_id : ${{secret.COS_SECRET_ID}}
-          cos_secret_key: ${{secret.COS_SECRET_KEY}}
-          cos_bucket: ${{secret.COS_BUCKET}}
+          cos_secret_id : ${{secrets.COS_SECRET_ID}}
+          cos_secret_key: ${{secrets.COS_SECRET_KEY}}
+          cos_bucket: ${{secrets.COS_BUCKET}}
         run: |
           ls
           pip install coscmd

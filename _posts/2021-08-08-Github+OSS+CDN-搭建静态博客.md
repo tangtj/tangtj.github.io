@@ -57,11 +57,11 @@ github page 支持放置静态html 搭建自己的网站。**免费**，这对�
 
 我选择的是 [腾讯云CDN](https://cloud.tencent.com/product/cdn]) 。
 
-- 每个月免费的50G的CDN流量包，持续半年（七牛云免费流量里头不支持HTTPS）。
+1. 每个月免费的50G的CDN流量包，持续半年（七牛云免费流量里头不支持HTTPS）。
 
-- 回源时，不会跳转到回源域名。（这个还挺影响体验的。用自己的域名，总是跳转到 xxx.github.io）。
+2. 回源时，不会跳转到回源域名。（这个还挺影响体验的。用自己的域名，总是跳转到 xxx.github.io）。
 
-- ~~我的域名在腾讯云，搞起来方便~~。
+3. ~~我的域名在腾讯云，搞起来方便~~。
 
 **前置条件：一个备案了的域名(不讨论海外地区)**
 
@@ -187,9 +187,9 @@ api secret id/key 获取方式：[点我](https://console.cloud.tencent.com/cam/
 
 资料参考
 
-- [**github page 文档**](https://docs.github.com/en/pages)
+1. [**github page 文档**](https://docs.github.com/en/pages) : https://docs.github.com/en/pages
 
-- [**github action 文档**](https://docs.github.com/en/actions)
+2. [**github action 文档**](https://docs.github.com/en/actions) : https://docs.github.com/en/actions
 
-- [**腾讯云 coscmd 文档**](https://cloud.tencent.com/document/product/436/10976)
+3. [**腾讯云 coscmd 文档**](https://cloud.tencent.com/document/product/436/10976) : https://cloud.tencent.com/document/product/436/10976
 

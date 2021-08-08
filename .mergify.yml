@@ -1,0 +1,12 @@
+pull_request_rules:
+  - name: Automatic merge on approval
+    conditions:
+      - "author=imgbot"
+    actions:
+      merge:
+        method: merge
+  - name: deleted merged branch
+    conditions:
+      - merged
+    actions:
+      delete_head_branch:

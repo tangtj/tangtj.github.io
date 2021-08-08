@@ -163,11 +163,11 @@ api secret id/key 获取方式：[点我](https://console.cloud.tencent.com/cam/
 
 配置完，运行一次 action。正常的话，oss里面就已经有文件了。然后就需要简单配置一下。
 
-- OSS 配置
+1. OSS 配置
 
   ![image-6-5](/file/image/6-5.png)
 
-- CDN 回源配置
+2. CDN 回源配置
 
   ![image-6-6](/file/image/6-6.png)
 

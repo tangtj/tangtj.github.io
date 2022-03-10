@@ -4,3 +4,5 @@ _site/*
 notpush_*
 mysh_*
 tmp_*
+.idea
+.DS_Store
